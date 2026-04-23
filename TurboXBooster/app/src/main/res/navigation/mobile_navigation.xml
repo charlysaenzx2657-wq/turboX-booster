@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.turbox.booster.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_optimizer"
+        android:name="com.turbox.booster.ui.optimizer.OptimizerFragment"
+        android:label="Optimizar"
+        tools:layout="@layout/fragment_optimizer" />
+
+    <fragment
+        android:id="@+id/navigation_gaming"
+        android:name="com.turbox.booster.ui.gaming.GamingFragment"
+        android:label="Gaming"
+        tools:layout="@layout/fragment_gaming" />
+
+    <fragment
+        android:id="@+id/navigation_advanced"
+        android:name="com.turbox.booster.ui.advanced.AdvancedFragment"
+        android:label="Avanzado"
+        tools:layout="@layout/fragment_advanced" />
+
+</navigation>

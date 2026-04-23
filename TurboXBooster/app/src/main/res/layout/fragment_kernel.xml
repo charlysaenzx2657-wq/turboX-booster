@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Kernel Info -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INFO DEL KERNEL"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_kernel_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Versión: cargando..."
+                    android:textColor="@color/colorOnSurface"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Uptime:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_uptime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/colorOnSurface" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Load avg (1/5/15m):" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_load_avg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- -- --" android:textColor="@color/colorOnSurface" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="I/O Scheduler:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_io_scheduler" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/colorPrimary" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TCP Congestion:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_tcp_congestion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/colorPrimary" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="VM Swappiness:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_swappiness" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/colorOnSurface" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Memoria:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tv_mem_pressure" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/colorOnSurface" android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tweaks del kernel -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TWEAKS DE KERNEL"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kernel_gaming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ Tweaks VM para gaming (swappiness bajo)"
+                    android:gravity="start|center_vertical"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kernel_network"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🌐 Tweaks TCP/IP (buffers grandes, BBR)"
+                    android:gravity="start|center_vertical"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_io_deadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💾 Cambiar I/O scheduler → deadline"
+                    android:gravity="start|center_vertical"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_io_cfq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💾 Cambiar I/O scheduler → cfq"
+                    android:gravity="start|center_vertical"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_readahead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📖 Aumentar read-ahead (2MB)"
+                    android:gravity="start|center_vertical"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

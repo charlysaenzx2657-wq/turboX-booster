@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/navigation_optimizer"
+        android:icon="@drawable/ic_optimizer"
+        android:title="Optimizar" />
+
+    <item
+        android:id="@+id/navigation_gaming"
+        android:icon="@drawable/ic_gaming"
+        android:title="Gaming" />
+
+    <item
+        android:id="@+id/navigation_advanced"
+        android:icon="@drawable/ic_settings"
+        android:title="Avanzado" />
+
+</menu>

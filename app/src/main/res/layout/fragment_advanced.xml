@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Estado Shizuku -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shizuku"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_shizuku_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verificando..."
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="4dp"
+                        app:chipMinHeight="28dp"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_request_shizuku"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activar"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Info card si no hay Shizuku -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_shizuku_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurfaceVariant"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ℹ️ Shizuku permite hacer optimizaciones avanzadas sin root. Descárgalo de Play Store y actívalo con ADB inalámbrico o USB una sola vez."
+                android:textColor="@color/colorOnSurfaceVariant"
+                android:textSize="13sp"
+                android:padding="16dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sin root (siempre disponibles) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIN ROOT NI SHIZUKU"
+            android:textColor="@color/colorGreen"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_gc_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="🗑️ Ejecutar Garbage Collection"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_battery_optimization"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="🔋 Optimización de batería"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_developer_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="⚙️ Opciones de desarrollador"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_app_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="📱 Administrar aplicaciones"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_wifi_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="📶 Configuración WiFi"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_terminal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="💻 Terminal Shizuku"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:gravity="start|center_vertical"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Animaciones (requiere Shizuku) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANIMACIONES"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_animations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Window animation -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Window animation" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_window_anim_value" android:layout_width="48dp" android:layout_height="wrap_content" android:text="1.0x" android:textColor="@color/colorPrimary" android:textSize="14sp" android:gravity="end"/>
+                </LinearLayout>
+                <SeekBar android:id="@+id/seek_window_anim" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                <!-- Transition animation -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Transition animation" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_transition_anim_value" android:layout_width="48dp" android:layout_height="wrap_content" android:text="1.0x" android:textColor="@color/colorPrimary" android:textSize="14sp" android:gravity="end"/>
+                </LinearLayout>
+                <SeekBar android:id="@+id/seek_transition_anim" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                <!-- Animator duration -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Animator duration" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_animator_duration_value" android:layout_width="48dp" android:layout_height="wrap_content" android:text="1.0x" android:textColor="@color/colorPrimary" android:textSize="14sp" android:gravity="end"/>
+                </LinearLayout>
+                <SeekBar android:id="@+id/seek_animator_duration" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_disable_animations"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Desactivar (0x)"
+                        android:layout_marginEnd="6dp"
+                        app:cornerRadius="8dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_reset_animations"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Restaurar (1x)"
+                        android:layout_marginStart="6dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- System Tweaks -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SISTEMA"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_system_tweaks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Forzar renderizado GPU" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switch_gpu_rendering" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorSurfaceVariant"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Forzar HW UI (aceleración)" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switch_force_hw_ui" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorSurfaceVariant"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Desactivar ahorro de batería" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switch_disable_battery_saver" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorSurfaceVariant" android:layout_marginBottom="12dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Límite procesos background:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="12sp" android:layout_marginBottom="8dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_background_limit0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Estándar" android:layout_marginEnd="4dp" app:cornerRadius="8dp" style="@style/Widget.Material3.Button.OutlinedButton"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_background_limit3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Máx 3" android:layout_marginHorizontal="4dp" app:cornerRadius="8dp" style="@style/Widget.Material3.Button.OutlinedButton"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_background_limit6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sin límite" android:layout_marginStart="4dp" app:cornerRadius="8dp" style="@style/Widget.Material3.Button.OutlinedButton"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorSurfaceVariant" android:layout_marginVertical="12dp"/>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_perf_mode" android:layout_width="match_parent" android:layout_height="48dp" android:text="⚡ Activar modo performance" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_kill_all" android:layout_width="match_parent" android:layout_height="48dp" android:text="💀 Cerrar todas las apps background" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_trim_caches" android:layout_width="match_parent" android:layout_height="48dp" android:text="🧹 Limpiar caché del sistema" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_clear_thermal" android:layout_width="match_parent" android:layout_height="48dp" android:text="🌡️ Liberar throttling térmico" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Network -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RED Y DNS" android:textColor="@color/colorPrimary" android:textSize="11sp" android:letterSpacing="0.15" android:fontFamily="sans-serif-medium" android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_network"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Optimizar escaneo WiFi" android:textColor="@color/colorOnSurface" android:textSize="14sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switch_wifi_optimize" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambiar DNS:" android:textColor="@color/colorOnSurfaceVariant" android:textSize="12sp" android:layout_marginBottom="8dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_dns_cloudflare" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="☁️ Cloudflare" android:layout_marginEnd="4dp" app:cornerRadius="8dp" style="@style/Widget.Material3.Button.OutlinedButton"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_dns_google" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🌐 Google" android:layout_marginStart="4dp" app:cornerRadius="8dp" style="@style/Widget.Material3.Button.OutlinedButton"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_dns_adblock" android:layout_width="match_parent" android:layout_height="48dp" android:text="🛡️ AdGuard (bloquea anuncios)" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_tcp_optimize" android:layout_width="match_parent" android:layout_height="48dp" android:text="⚡ Optimizar TCP/IP" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Danger Zone -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️ ZONA AVANZADA" android:textColor="@color/colorRed" android:textSize="11sp" android:letterSpacing="0.15" android:fontFamily="sans-serif-medium" android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_danger_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:strokeColor="@color/colorRed"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_density_change" android:layout_width="match_parent" android:layout_height="48dp" android:text="📐 Cambiar densidad de pantalla (DPI)" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_density_reset" android:layout_width="match_parent" android:layout_height="48dp" android:text="↩️ Restaurar densidad original" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp" android:layout_marginBottom="8dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_enable_dev_options" android:layout_width="match_parent" android:layout_height="48dp" android:text="🛠️ Activar opciones de desarrollador" style="@style/Widget.Material3.Button.OutlinedButton" app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

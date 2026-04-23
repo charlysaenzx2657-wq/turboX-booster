@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TurboX Booster</string>
+
+    <!-- Navigation -->
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_optimizer">Boost</string>
+    <string name="title_gaming">Gaming</string>
+    <string name="title_advanced">Avanzado</string>
+
+    <!-- Dashboard -->
+    <string name="system_score">Score del sistema</string>
+    <string name="cpu_usage">Uso de CPU</string>
+    <string name="ram_usage">Uso de RAM</string>
+    <string name="temperature">Temperatura</string>
+    <string name="battery">Batería</string>
+    <string name="storage">Almacenamiento</string>
+
+    <!-- Optimizer -->
+    <string name="optimize_btn">⚡ OPTIMIZAR SISTEMA</string>
+    <string name="optimizing">Optimizando...</string>
+    <string name="optimization_complete">¡Optimización completada!</string>
+
+    <!-- Gaming -->
+    <string name="game_booster">Game Booster</string>
+    <string name="apply_boost">🚀 APLICAR BOOST</string>
+    <string name="no_games">No se encontraron juegos instalados</string>
+
+    <!-- Advanced -->
+    <string name="shizuku_active">✓ Shizuku activo</string>
+    <string name="shizuku_not_installed">Shizuku no instalado</string>
+    <string name="shizuku_no_permission">Sin permiso</string>
+    <string name="shizuku_info">ℹ️ Shizuku permite hacer optimizaciones avanzadas sin root. Descárgalo de Play Store y actívalo con ADB inalámbrico o USB una sola vez.</string>
+
+    <!-- Service -->
+    <string name="service_running">TurboX Booster activo</string>
+    <string name="service_monitoring">Monitoreando sistema...</string>
+</resources>

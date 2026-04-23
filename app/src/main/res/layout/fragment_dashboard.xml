@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SISTEMA"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Score Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Score del sistema"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_system_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="48sp"
+                        android:fontFamily="sans-serif-black"/>
+
+                    <TextView
+                        android:id="@+id/tv_score_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calculando..."
+                        android:textColor="@color/colorGreen"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/score_progress"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:progress="0"
+                    app:indicatorSize="80dp"
+                    app:trackThickness="8dp"
+                    app:indicatorColor="@color/colorGreen"
+                    app:trackColor="@color/colorSurfaceVariant"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CPU Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="CPU"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:id="@+id/tv_cpu_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-bold"/>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/cpu_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    app:indicatorColor="@color/colorPrimary"
+                    app:trackColor="@color/colorSurfaceVariant"
+                    app:trackCornerRadius="4dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cpu_governor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gov: --"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_cpu_freq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- MHz"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <!-- CPU Graph -->
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/cpu_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- RAM Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RAM"
+                            android:textColor="@color/colorOnSurface"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_ram_used"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-- MB"
+                                android:textColor="@color/colorSecondary"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_ram_total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/ -- MB"
+                                android:textColor="@color/colorOnSurfaceVariant"
+                                android:textSize="13sp"
+                                android:layout_marginStart="4dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_ram_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-bold"/>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/ram_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    app:indicatorColor="@color/colorSecondary"
+                    app:trackColor="@color/colorSurfaceVariant"
+                    app:trackCornerRadius="4dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tv_swap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SWAP: --"
+                    android:textColor="@color/colorOnSurfaceVariant"
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
+
+                <!-- RAM Graph -->
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/ram_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Row: Temperatura + Batería -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Temperatura -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperatura"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--°C"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="28sp"
+                        android:fontFamily="sans-serif-black"/>
+
+                    <TextView
+                        android:id="@+id/tv_temp_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Normal"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/temp_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:progress="0"
+                        app:indicatorColor="@color/colorYellow"
+                        app:trackColor="@color/colorSurfaceVariant"
+                        app:trackCornerRadius="4dp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Batería -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Batería"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--%"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="28sp"
+                        android:fontFamily="sans-serif-black"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descargando"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_voltage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- V"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/battery_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:progress="0"
+                        app:indicatorColor="@color/colorGreen"
+                        app:trackColor="@color/colorSurfaceVariant"
+                        app:trackCornerRadius="4dp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Almacenamiento -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Almacenamiento"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_storage_used"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- GB"
+                            android:textColor="@color/colorTertiary"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_storage_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/ -- GB"
+                            android:textColor="@color/colorOnSurfaceVariant"
+                            android:textSize="13sp"
+                            android:layout_marginStart="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/storage_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    app:indicatorColor="@color/colorTertiary"
+                    app:trackColor="@color/colorSurfaceVariant"
+                    app:trackCornerRadius="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary - Azul eléctrico -->
+    <color name="colorPrimary">#2979FF</color>
+    <color name="colorPrimaryLight">#448AFF</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimaryContainer">#1A237E</color>
+    <color name="colorOnPrimaryContainer">#82B1FF</color>
+
+    <!-- Secondary - Verde neón -->
+    <color name="colorSecondary">#00E676</color>
+    <color name="colorSecondaryLight">#69F0AE</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!-- Tertiary - Naranja -->
+    <color name="colorTertiary">#FF6D00</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+
+    <!-- Background - Oscuro profundo -->
+    <color name="colorBackground">#0A0A0F</color>
+    <color name="colorSurface">#12121A</color>
+    <color name="colorSurfaceVariant">#1E1E2E</color>
+    <color name="colorOnSurface">#E8EAF6</color>
+    <color name="colorOnSurfaceVariant">#7986CB</color>
+
+    <!-- Status colors -->
+    <color name="colorGreen">#00E676</color>
+    <color name="colorYellow">#FFD740</color>
+    <color name="colorRed">#FF5252</color>
+    <color name="colorOrange">#FF6D00</color>
+
+    <!-- Navigation -->
+    <color name="nav_item_selected">#2979FF</color>
+    <color name="nav_item_unselected">#546E7A</color>
+
+    <!-- System -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

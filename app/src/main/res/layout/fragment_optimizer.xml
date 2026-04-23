@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Stats actuales -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RAM"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_ram_before"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Score"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_score_before"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón optimizar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_optimize"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="⚡ OPTIMIZAR SISTEMA"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-bold"
+            android:letterSpacing="0.1"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Progress -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/optimize_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            app:indicatorColor="@color/colorPrimary"
+            app:trackCornerRadius="4dp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_optimize_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorOnSurfaceVariant"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Opciones de optimización -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OPCIONES"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- Siempre disponibles -->
+                <CheckBox
+                    android:id="@+id/cb_gc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Liberar memoria RAM (GC)"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+
+                <!-- Requieren Shizuku -->
+                <CheckBox
+                    android:id="@+id/cb_kill_apps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cerrar apps en background  🔒"
+                    android:checked="true"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/cb_disable_animations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Desactivar animaciones  🔒"
+                    android:checked="true"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/cb_gpu_acceleration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Activar aceleración GPU  🔒"
+                    android:checked="true"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/cb_trim_caches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Limpiar caché del sistema  🔒"
+                    android:checked="true"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/cb_thermal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Liberar throttling térmico  🔒"
+                    android:checked="false"
+                    android:textColor="@color/colorOnSurface"
+                    android:padding="12dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Hint Shizuku -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/tv_shizuku_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorSurfaceVariant"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔒 Las opciones marcadas requieren Shizuku. Ve a la pestaña Avanzado para activarlo."
+                android:textColor="@color/colorOnSurfaceVariant"
+                android:textSize="13sp"
+                android:padding="16dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Resultados -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorPrimaryContainer"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓ RESULTADO"
+                    android:textColor="@color/colorOnPrimaryContainer"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RAM libre"
+                            android:textColor="@color/colorOnPrimaryContainer"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_ram_after"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textColor="@color/colorOnPrimaryContainer"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nuevo score"
+                            android:textColor="@color/colorOnPrimaryContainer"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_score_after"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textColor="@color/colorOnPrimaryContainer"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    app:indicatorColor="@color/colorOnPrimaryContainer"
+                    app:trackColor="@color/colorPrimary"
+                    app:trackCornerRadius="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

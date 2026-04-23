@@ -13,6 +13,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-
-rootProject.name = "TurboX Booster"
+rootProject.name = "TurboXBooster"
 include ':app'

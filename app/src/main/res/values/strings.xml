@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TurboX Ultra</string>
+    <string name="app_version">3.0.0-ULTRA</string>
+    <string name="shizuku_package">moe.shizuku.privileged.api</string>
+</resources>

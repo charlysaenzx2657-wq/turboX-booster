@@ -2,4 +2,6 @@
     <string name="app_name">TurboX Ultra</string>
     <string name="app_version">3.0.0-ULTRA</string>
     <string name="shizuku_package">moe.shizuku.privileged.api</string>
+    <string name="accessibility_service_label">TurboX Auto-Optimizer</string>
+    <string name="accessibility_service_description">Permite a TurboX limpiar apps recientes automáticamente para liberar RAM</string>
 </resources>
